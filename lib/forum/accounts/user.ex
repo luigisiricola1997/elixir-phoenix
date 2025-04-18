@@ -3,8 +3,9 @@ defmodule Forum.Accounts.User do
   import Ecto.Changeset
 
   schema "users" do
-    field :email, :string
     field :name, :string
+    field :email, :string
+    has_many :posts, Forum.Posts.Post
 
     timestamps(type: :utc_datetime)
   end
